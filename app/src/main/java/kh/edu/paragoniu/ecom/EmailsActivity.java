@@ -1,6 +1,10 @@
 package kh.edu.paragoniu.ecom;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +12,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
 public class EmailsActivity extends AppCompatActivity {
+
+    private ProgressBar progressBar;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -16,8 +29,9 @@ public class EmailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_emails);
 
-        // Make a reference to the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        // Make a reference to the Views
+        progressBar = findViewById(R.id.progress_bar);
+        recyclerView = findViewById(R.id.recycler_view);
 
         // Create and set a layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -25,35 +39,54 @@ public class EmailsActivity extends AppCompatActivity {
         //RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        // Create and set an adapter
-        Email[] emails = loadEmails();
-        EmailsAdapter adapter = new EmailsAdapter(emails);
-        recyclerView.setAdapter(adapter);
+        loadEmails();
     }
 
-    private Email[] loadEmails(){
-        // Temporary data
-        Email email1 = new Email();
-        email1.setSender("Sok Sao");
-        email1.setSubject("Hello");
-        email1.setBody("How are you?");
+    private void loadEmails() {
 
-        Email email2 = new Email();
-        email2.setSender("Abc");
-        email2.setSubject("Hi");
-        email2.setBody("Bye bye");
+        // Show loading
+        showLoading(true);
 
-        Email email3 = new Email();
-        email3.setSender("Xyz");
-        email3.setSubject("How do you do?");
-        email3.setBody(":)");
+        // Load email from the server using Volley library
+        String url = "http://10.0.2.2/paragonu/mails.php";
 
-        Email email4 = new Email();
-        email4.setSender("Xyz2");
-        email4.setSubject("How do you do?");
-        email4.setBody(":)");
+        // Create a request
+        StringRequest request = new StringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // Convert json string to array of Email using Gson
+                Gson gson = new Gson();
+                Email[] emails = gson.fromJson(response, Email[].class);
+                // Create and set an adapter
+                EmailsAdapter adapter = new EmailsAdapter(emails);
+                recyclerView.setAdapter(adapter);
 
-        return new Email[]{email1, email2, email3, email4};
+                // Hide the progress bar and show recycler view
+                showLoading(false);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(EmailsActivity.this, "Something error while loading data from the server", Toast.LENGTH_LONG).show();
+                Log.d("piuecom", "Load data error: " + error.getMessage());
+                // Hide the progress bar and show recycler view
+                showLoading(false);
+            }
+        });
+
+        // Add the request to the Queue
+        Volley.newRequestQueue(this).add(request);
+
+    }
+
+    private void showLoading(boolean state){
+        if(state){
+            recyclerView.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.INVISIBLE);
+            recyclerView.setVisibility(View.VISIBLE);
+        }
     }
 
 }

@@ -3,6 +3,7 @@ package kh.edu.paragoniu.ecom;
 public class Email {
 
     private String sender;
+    private String senderProfile;
     private String subject;
     private String body;
     private long time;
@@ -13,6 +14,14 @@ public class Email {
 
     public void setSender(String sender) {
         this.sender = sender;
+    }
+
+    public String getSenderProfile() {
+        return senderProfile;
+    }
+
+    public void setSenderProfile(String senderProfile) {
+        this.senderProfile = senderProfile;
     }
 
     public String getSubject() {
