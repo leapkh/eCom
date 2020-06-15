@@ -1,4 +1,4 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.adapter;
 
 import android.view.View;
 import android.widget.TextView;
@@ -7,6 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import kh.edu.paragoniu.ecom.model.Email;
+import kh.edu.paragoniu.ecom.R;
 
 public class EmailViewHolder extends RecyclerView.ViewHolder {
 

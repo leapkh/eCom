@@ -1,10 +1,13 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.activity;
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+
+import kh.edu.paragoniu.ecom.R;
+import kh.edu.paragoniu.ecom.adapter.ImageSlideShowAdapter;
 
 public class ImageSlideShowActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.model;
 
 public class Email {
 

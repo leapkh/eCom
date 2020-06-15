@@ -2,23 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/mnu_favorites"
-        android:icon="@drawable/ic_favorite"
-        android:title="@string/favorites" />
+        android:id="@+id/mnu_products"
+        android:icon="@drawable/ic_products"
+        android:title="@string/products" />
 
     <item
-        android:id="@+id/mnu_recents"
-        android:icon="@drawable/ic_recent"
-        android:title="@string/recents" />
+        android:id="@+id/mnu_categories"
+        android:icon="@drawable/ic_categories"
+        android:title="@string/categories" />
 
     <item
-        android:id="@+id/mnu_contacts"
-        android:icon="@drawable/ic_contact"
-        android:title="@string/contacts" />
+        android:id="@+id/mnu_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
 
     <item
-        android:id="@+id/mnu_voicemail"
-        android:icon="@drawable/ic_voicemail"
-        android:title="@string/voicemail" />
+        android:id="@+id/mnu_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
 
 </menu>

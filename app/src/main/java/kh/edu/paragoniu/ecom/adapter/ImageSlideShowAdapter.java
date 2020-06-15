@@ -1,4 +1,4 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import kh.edu.paragoniu.ecom.R;
 
 public class ImageSlideShowAdapter extends PagerAdapter {
 

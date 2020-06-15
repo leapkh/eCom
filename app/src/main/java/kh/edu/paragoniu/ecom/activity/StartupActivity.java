@@ -1,9 +1,11 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import kh.edu.paragoniu.ecom.R;
 
 public class StartupActivity extends AppCompatActivity {
 

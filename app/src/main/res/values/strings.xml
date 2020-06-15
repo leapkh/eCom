@@ -10,10 +10,10 @@
     <string name="save_to_gallery">Save to Gallery</string>
     <string name="share">Share</string>
 
-    <string name="favorites">Favorites</string>
-    <string name="recents">Recents</string>
-    <string name="contacts">Contacts</string>
-    <string name="voicemail">Voicemail</string>
+    <string name="products">Products</string>
+    <string name="categories">Categories</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 
     <!-- Dashboard -->
     <string name="dashboard_title">ABA Mobile</string>

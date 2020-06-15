@@ -1,4 +1,4 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.activity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +16,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+
+import kh.edu.paragoniu.ecom.model.Email;
+import kh.edu.paragoniu.ecom.adapter.EmailsAdapter;
+import kh.edu.paragoniu.ecom.R;
 
 public class EmailsActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package kh.edu.paragoniu.ecom;
+package kh.edu.paragoniu.ecom.activity;
 
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -16,6 +16,8 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import kh.edu.paragoniu.ecom.R;
 
 public class MenuActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 

@@ -4,14 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/app_name" />
+
+    <!-- Bottom Bar menu -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bootom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        android:background="@color/white"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/activity_bottom_nav" />
+
+    <!-- Fragment container -->
+    <FrameLayout
+        android:id="@+id/lyt_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bootom_nav"
+        android:layout_below="@id/toolbar" />
 
 </RelativeLayout>
