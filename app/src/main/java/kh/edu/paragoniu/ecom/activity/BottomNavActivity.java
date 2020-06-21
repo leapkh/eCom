@@ -1,5 +1,6 @@
 package kh.edu.paragoniu.ecom.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -22,6 +23,8 @@ import kh.edu.paragoniu.ecom.fragment.SettingsFragment;
 
 public class BottomNavActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
+    public static final String EXTRA_USERNAME = "USERNAME";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,11 @@ public class BottomNavActivity extends AppCompatActivity implements BottomNaviga
         // Fragment
         showFragment(new ProductsFragment());
         getSupportActionBar().setTitle(R.string.products);
+
+        // Extract username from the Intent
+        Intent intent = getIntent();
+        String username = intent.getStringExtra(EXTRA_USERNAME);
+        Toast.makeText(this, username, Toast.LENGTH_LONG).show();
     }
 
     @Override

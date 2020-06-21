@@ -31,33 +31,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:gravity="center"
         android:layout_weight="1"
+        android:gravity="center"
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/etxt_username"
             android:layout_width="match_parent"
-            android:layout_margin="16dp"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:hint="Username" />
 
         <EditText
-            android:layout_margin="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:hint="Password" />
 
         <Button
             android:layout_width="wrap_content"
-            android:text="Login"
+            android:layout_height="wrap_content"
             android:background="#2b348f"
-            android:textColor="#fff"
-            android:layout_height="wrap_content" />
+            android:onClick="onLoginClick"
+            android:text="Login"
+            android:textColor="#fff" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:text="Request new password"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Request new password" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:onClick="testIntentFilter"
+            android:text="Test Intent Filter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onWebsiteClick"
+            android:text="Our Website" />
+
+        <TextView
+            android:id="@+id/txt_login_methods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onLoginMethodsClick"
+            android:text="Login Methods" />
 
     </LinearLayout>
 
