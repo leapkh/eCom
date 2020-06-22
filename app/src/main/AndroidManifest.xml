@@ -3,6 +3,7 @@
     package="kh.edu.paragoniu.ecom">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name=".MyApp"
@@ -14,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".activity.LoginActivity">
+        <activity android:name=".activity.UserLocationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

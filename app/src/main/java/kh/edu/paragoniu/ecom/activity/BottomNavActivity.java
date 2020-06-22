@@ -1,6 +1,7 @@
 package kh.edu.paragoniu.ecom.activity;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -13,6 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import kh.edu.paragoniu.ecom.R;
@@ -47,6 +51,15 @@ public class BottomNavActivity extends AppCompatActivity implements BottomNaviga
         Intent intent = getIntent();
         String username = intent.getStringExtra(EXTRA_USERNAME);
         Toast.makeText(this, username, Toast.LENGTH_LONG).show();
+
+
+        FusedLocationProviderClient fusedLocationProviderClient = null;
+        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
+            @Override
+            public void onComplete(@NonNull Task<Location> task) {
+
+            }
+        });
     }
 
     @Override
