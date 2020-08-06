@@ -39,4 +39,6 @@
     <string name="qr_scanner_instruction">Align frame with QR code.</string>
     <string name="qr_pay_manually">Pay Manually</string>
 
+    <string name="google_map_api_key">AIzaSyAZhWAhxacXuizhI-V2XJ2e_AXsEkKd6EA</string>
+
 </resources>
